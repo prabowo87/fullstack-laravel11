@@ -1,9 +1,9 @@
-## Laravel 11
-## Tailwind
-## Blade
-## Alpinejs
-## Breeze
-## Sql Lite
+# Laravel 11
+# Tailwind
+# Blade
+# Alpinejs
+# Breeze
+# Sql Lite
 
 This app is simple auth and write profile just in minutes
 
