@@ -52,7 +52,7 @@ This app is simple auth and write profile just in minutes
 10. php artisan serv or if you use HERD is very simple just open browser your_folder.test
 
 ## DOCUMENTATION API
-[Register]
+[Register]<br />
 END POINT : https://full-stack.test/api/register <br />
 method : POST <br />
 sample with curl:<br />
@@ -65,47 +65,47 @@ curl --location 'https://full-stack.test/api/register' \
     "phone": "085749458179",
     "address": "Ponorogo",
     "password": "Aa345678"
-}'
+}'<br />
 
-[Register or LOGIN with facebook or google]
+[Register or LOGIN with facebook or google]<br />
     
-END POINT : https://full-stack.test/api/auth/facebook/redirect
-method : GET
-sample with curl:
-curl --location 'https://full-stack.test/api/auth/facebook/redirect'
-curl --location 'https://full-stack.test/api/auth/google/redirect'
+END POINT : https://full-stack.test/api/auth/facebook/redirect<br />
+method : GET<br />
+sample with curl:<br />
+curl --location 'https://full-stack.test/api/auth/facebook/redirect'<br />
+curl --location 'https://full-stack.test/api/auth/google/redirect'<br />
 
-END POINT CALL BACK : https://full-stack.test/api/auth/facebook/callback
-method : GET
-sample with curl:
-curl --location 'https://full-stack.test/api/auth/facebook/callback'
-curl --location 'https://full-stack.test/api/auth/google/callback'
+END POINT CALL BACK : https://full-stack.test/api/auth/facebook/callback<br />
+method : GET<br />
+sample with curl:<br />
+curl --location 'https://full-stack.test/api/auth/facebook/callback'<br />
+curl --location 'https://full-stack.test/api/auth/google/callback'<br />
 
-[LOGIN]
-END POINT : https://full-stack.test/api/login
-method : POST
-sample with curl
+[LOGIN]<br />
+END POINT : https://full-stack.test/api/login<br />
+method : POST<br />
+sample with curl<br />
 curl --location 'https://full-stack.test/api/login' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "email":"hermawankoding@gmail.com",
     "password":"AaFFds_8"
-}'
+}'<br />
 
-[LOG OUT]
-END POINT : https://full-stack.test/api/logout
-method : POST
-sample with curl
+[LOG OUT]<br />
+END POINT : https://full-stack.test/api/logout<br />
+method : POST<br />
+sample with curl<br />
 curl --location 'https://full-stack.test/api/logout' \
 --header 'Authorization: Bearer 9|QHLkz2AJsUcbSiORcGv0TQxnFrjNhyaPlt7DGAkRa8fe2ebc' \
---header 'acc: application/json'
+--header 'acc: application/json'<br />
 
-[DASHBOARD]
-END POINT : https://full-stack.test/api/dashboard
-method : GET
-sample with curl
+[DASHBOARD]<br />
+END POINT : https://full-stack.test/api/dashboard<br />
+method : GET<br />
+sample with curl<br />
 curl --location 'https://full-stack.test/api/dashboard' \
 --header 'Authorization: Bearer 9|QHLkz2AJsUcbSiORcGv0TQxnFrjNhyaPlt7DGAkRa8fe2ebc' \
---header 'acc: application/json'
+--header 'acc: application/json'<br />
 
 
