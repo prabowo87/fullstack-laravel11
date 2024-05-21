@@ -14,6 +14,10 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redis;
+use App\Mail\OtpMail;
+
 class ApiAuthController extends Controller
 {
     use ResponseApiTrait;
@@ -54,11 +58,14 @@ class ApiAuthController extends Controller
         // return $user;
         try{
             DB::beginTransaction();
+            $otp = rand(100000, 999999); // Generate a 6-digit OTP
             $user = User::create([
                 'name' => $request->name,
                 'phone' => $request->phone,
                 'address' => $request->address,
                 'email' => $request->email,
+                'otp' => $otp,
+                'email_verified_at' => date('Y-m-d H:i:s'),
                 'password' => Hash::make($request->password),
             ]);
             if ($user){
@@ -73,7 +80,11 @@ class ApiAuthController extends Controller
                 $success['phone'] =  $user->phone;
                 $success['address'] =  $user->address;
     
-                event(new Registered($user));
+               
+                // Store OTP in Redis with a 5-minute expiration
+                Redis::setex("otp:$user->email", 300, $user);
+                // Send OTP by email
+                Mail::to($user->email)->send(new OtpMail($user));
                 DB::commit();
                 return $this->success( "Register Success",
                         $success,200 );
@@ -87,6 +98,23 @@ class ApiAuthController extends Controller
         }
         
         
+    }
+    public function verify(Request $request)
+    {
+        if (Auth::check()){
+            if (auth()->user()->otp==$request->otp){
+                $request->user()->email_verified_at=date('Y-m-d H:i:s');
+                // $request->user()->email_verified_at=NULL;
+                $request->user()->save();
+                return $this->success( "Verification Success",200 );
+            }else{
+                return $this->error( "Verification Failed",402 );
+            }
+                
+        }else{
+            return $this->error('Unauthorised.', 401);
+        }
+       
     }
     public function logout(Request $request)
     {
