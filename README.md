@@ -7,6 +7,19 @@
 
 This app is simple auth and write profile just in minutes
 
+## FITURE Fullstack
+1. Register
+2. Login
+4. email verification
+
+## FITURE API
+1. Register
+2. Register with facebook, google
+3. Login with facebook, google
+4. otp email verification
+5. Dashboard with list user and paging
+   
+
 ## Installation
 
 1. clone this repo
@@ -24,6 +37,75 @@ This app is simple auth and write profile just in minutes
        MAIL_USERNAME=<YOUR MAIL USERNAME >
        MAIL_PASSWORD=<YOUR MAIL PASSWORD>
        MAIL_ENCRYPTION=tls
+8. setup facebook,google login config
+    - open .env
+    - add this config  :
+       GITHUB_CLIENT_ID= (YOUR GITHUB_CLIENT_ID)
+        GITHUB_CLIENT_SECRET= (YOUR GITHUB_CLIENT_SECRET)
+         
+        FACEBOOK_CLIENT_ID=(YOUR FACEBOOK_CLIENT_ID_
+        FACEBOOK_CLIENT_SECRET=(YOUR FACEBOOK_CLIENT_SECRET)
+         
+        GOOGLE_CLIENT_ID=(YOUR GOOGLE_CLIENT_ID)
+        GOOGLE_CLIENT_SECRET= (YOUR GOOGLE_CLIENT_SECRET)
 9. npm run dev/build
 10. php artisan serv or if you use HERD is very simple just open browser your_folder.test
-   
+
+## DOCUMENTATION API
+[Register]
+END POINT : https://full-stack.test/api/register 
+method : POST
+sample with curl:
+curl --location 'https://full-stack.test/api/register' \
+--header 'Content-Type: application/json' \
+--header 'Cookie: XSRF-TOKEN=eyJpdiI6ImliQVRqTlNOM2hDOWtVSEEzTVNBTkE9PSIsInZhbHVlIjoiMWRZSTdWZ3VxNHZIMi9Mems5amFoT3RiR0VGVjgzVWwwWFRXL1AzNWtQZ0xQdUhYbUlNR0hxNVFnMXZ5Y1h0T2o5eTRHTlZRZFdoMVB6QU12Z1BBeGJMTzVuMkgvR0ovcHRwbTZPNmlFQUZFK2tBSGdoU3NlVEk4WjlMMVlCaEkiLCJtYWMiOiI1ZmM1ZmNmYzU1MWNjZDhlN2MxNTMyMjEzMDZlZDdjMGIwYTMyODQwNWQ0ZDlmMDdlN2RlMGIyZmQxZWE4OWQ0IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6IjJCcDJXQmVpT2JtVmVNTmhBd0lQVHc9PSIsInZhbHVlIjoiTzFqUmdUcjhnMzVLazNEbzQrWTlhcDg4QWUrWTJFMFU0akF0WkNpYzQ4VUVGTzdxVkhuL1dXUnI2endnSEJIUTVsTVl6STJuYUxPNGExSFkzZWtleUp6djhiNVNCU2xZVmNaRmt0MkxtQVA3Q1BwNHY0TUkxU1ZNQWQ4U0srTWsiLCJtYWMiOiI0Mzk0OTFlNWQ4NDdkMDE3M2RkNmEyNjM4MzIxNDQxMTFjN2JmYzk2YTJlN2U0OTM5MGRjZTYyOGMxYjljZDA3IiwidGFnIjoiIn0%3D' \
+--data-raw '{
+    "name": "Hermawan Prabowo",
+    "email": "hermawankoding@gmail.com",
+    "phone": "085749458179",
+    "address": "Ponorogo",
+    "password": "Aa345678"
+}'
+
+[Register or LOGIN with facebook or google]
+    
+END POINT : https://full-stack.test/api/auth/facebook/redirect
+method : GET
+sample with curl:
+curl --location 'https://full-stack.test/api/auth/facebook/redirect'
+curl --location 'https://full-stack.test/api/auth/google/redirect'
+
+END POINT CALL BACK : https://full-stack.test/api/auth/facebook/callback
+method : GET
+sample with curl:
+curl --location 'https://full-stack.test/api/auth/facebook/callback'
+curl --location 'https://full-stack.test/api/auth/google/callback'
+
+[LOGIN]
+END POINT : https://full-stack.test/api/login
+method : POST
+sample with curl
+curl --location 'https://full-stack.test/api/login' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email":"hermawankoding@gmail.com",
+    "password":"AaFFds_8"
+}'
+
+[LOG OUT]
+END POINT : https://full-stack.test/api/logout
+method : POST
+sample with curl
+curl --location 'https://full-stack.test/api/logout' \
+--header 'Authorization: Bearer 9|QHLkz2AJsUcbSiORcGv0TQxnFrjNhyaPlt7DGAkRa8fe2ebc' \
+--header 'acc: application/json'
+
+[DASHBOARD]
+END POINT : https://full-stack.test/api/dashboard
+method : GET
+sample with curl
+curl --location 'https://full-stack.test/api/dashboard' \
+--header 'Authorization: Bearer 9|QHLkz2AJsUcbSiORcGv0TQxnFrjNhyaPlt7DGAkRa8fe2ebc' \
+--header 'acc: application/json'
+
+
