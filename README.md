@@ -53,9 +53,9 @@ This app is simple auth and write profile just in minutes
 
 ## DOCUMENTATION API
 [Register]
-END POINT : https://full-stack.test/api/register \n
-method : POST \n
-sample with curl:\n
+END POINT : https://full-stack.test/api/register <br />
+method : POST <br />
+sample with curl:<br />
 curl --location 'https://full-stack.test/api/register' \
 --header 'Content-Type: application/json' \
 --header 'Cookie: XSRF-TOKEN=eyJpdiI6ImliQVRqTlNOM2hDOWtVSEEzTVNBTkE9PSIsInZhbHVlIjoiMWRZSTdWZ3VxNHZIMi9Mems5amFoT3RiR0VGVjgzVWwwWFRXL1AzNWtQZ0xQdUhYbUlNR0hxNVFnMXZ5Y1h0T2o5eTRHTlZRZFdoMVB6QU12Z1BBeGJMTzVuMkgvR0ovcHRwbTZPNmlFQUZFK2tBSGdoU3NlVEk4WjlMMVlCaEkiLCJtYWMiOiI1ZmM1ZmNmYzU1MWNjZDhlN2MxNTMyMjEzMDZlZDdjMGIwYTMyODQwNWQ0ZDlmMDdlN2RlMGIyZmQxZWE4OWQ0IiwidGFnIjoiIn0%3D; laravel_session=eyJpdiI6IjJCcDJXQmVpT2JtVmVNTmhBd0lQVHc9PSIsInZhbHVlIjoiTzFqUmdUcjhnMzVLazNEbzQrWTlhcDg4QWUrWTJFMFU0akF0WkNpYzQ4VUVGTzdxVkhuL1dXUnI2endnSEJIUTVsTVl6STJuYUxPNGExSFkzZWtleUp6djhiNVNCU2xZVmNaRmt0MkxtQVA3Q1BwNHY0TUkxU1ZNQWQ4U0srTWsiLCJtYWMiOiI0Mzk0OTFlNWQ4NDdkMDE3M2RkNmEyNjM4MzIxNDQxMTFjN2JmYzk2YTJlN2U0OTM5MGRjZTYyOGMxYjljZDA3IiwidGFnIjoiIn0%3D' \
