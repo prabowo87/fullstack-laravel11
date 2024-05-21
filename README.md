@@ -1,17 +1,19 @@
-@ Laravel 11
-@ Tailwind
-@ Blade
-@ Alpinejs
-@ Breeze
-@ Sql Lite
+@ Laravel 11<br />
+@ Tailwind<br />
+@ Blade<br />
+@ Alpinejs<br />
+@ Breeze<br />
+@ Sql Lite<br />
 
-This app is simple auth and write profile just in minutes
+This app is simple auth and write profile just in minutes<br />
 
+## FS 3.1 (Authentication & Profile)
 ## FITURE Fullstack
 1. Register
 2. Login
 4. email verification
 
+## BE 1.1 (Authentication)
 ## FITURE API
 1. Register
 2. Register with facebook, google
